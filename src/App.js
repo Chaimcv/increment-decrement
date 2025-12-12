@@ -8,7 +8,7 @@ function App() {
   const increment=function(){
    setCount(count+5);
    console.log(count);
-   
+   setColour(count>20?(< span style={{color:"green"}}>{count}</span>):{count});
   }
   const decrement=function(){
     count>0?setCount(count-5):setCount(0);
