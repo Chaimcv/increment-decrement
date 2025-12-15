@@ -1,20 +1,46 @@
 
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 
 const Main = () => {
-     const[count,setCount]=useState(0);
-      const[colour,setColour]=useState('red');
-
+    const[count,setCount]=useState(0);
+    const[colour,setColour]=useState('red');
+     
+     console.log(colour,"global colour");
+      console.log(count,"global count");
+      useEffect(()=>{ 
+        if( count>=0 && count<10){
+        setColour('red');
+         console.log(count,"1");
+          console.log(colour,"1");
+       }
+       else if(count>=10 && count<20)
+       {
+        setColour('green');
+         console.log(count,"2");
+          console.log(colour,"2");
+       }
+       else
+        {
+        setColour('blue');
+         console.log(count,"3");
+          console.log(colour,"3");
+       }
+       } ,[count])
       const increment=function(){
        setCount(count+5);
-       count>=0 && count<20?setColour('red'):
-       count>=20 && count<40?setColour('green'):setColour('blue');
+      
       }
+      
       const decrement=function(){
-        count>5?setCount(count-5):setCount(0);
-        count>=0 && count<20?setColour('red'):
-       count>=20 && count<40?setColour('green'):setColour('blue');
-      }
+       if(count>0){
+        setCount(count-5);}
+        else{
+            setCount(0);
+        }
+        
+       
+
+    }
       const result=function(){
         setCount(0);
         setColour('red'); 
