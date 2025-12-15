@@ -20,7 +20,6 @@ function App() {
   }
   return (
     <div className="App">
-      {/* <h2>{count}</h2> */}
       <h2 style={{color:colour}}>{count}</h2>
       <button onClick={increment}>+</button>
        <button onClick={result}>Reset</button>
