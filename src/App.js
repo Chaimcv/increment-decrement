@@ -7,7 +7,8 @@ function App() {
   const[colour,setColour]=useState('red');
   const increment=function(){
    setCount(count+5);
-   count>15 && count<40?setColour('green'):setColour('blue');
+   count>=0 && count<20?setColour('red'):
+   count>=20 && count<40?setColour('green'):setColour('blue');
   }
   const decrement=function(){
     count>0?setCount(count-5):setCount(0);
